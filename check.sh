@@ -1,6 +1,5 @@
 #!/bin/bash
 #DateString = $(date "+%d.%m.%y %H:%M") 
-
 IFS=";" read -ra hosts <<< "srv.txt"
 
 for i in ${hosts[@]} ; do
