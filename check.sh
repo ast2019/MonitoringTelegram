@@ -1,4 +1,3 @@
-GNU nano 2.5.3                                                              File: monitoring/pingcheck.sh                                                                                                                                  
 #!/bin/bash
 declare -a hosts
 #hosts=("vpn" "cloud" "worker1" "worker2")
