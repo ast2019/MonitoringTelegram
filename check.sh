@@ -1,14 +1,18 @@
+GNU nano 2.5.3                                                              File: monitoring/pingcheck.sh                                                                                                                                  
 #!/bin/bash
-#DateString = $(date "+%d.%m.%y %H:%M") 
-IFS=";" read -ra hosts <<< 'srv.txt'
+declare -a hosts
+#hosts=("vpn" "cloud" "worker1" "worker2")
 
-for i in ${hosts[@]} ; do
-  if ping -c 1 -w 1 ${hosts[$i]} > /dev/null 
+for hosts in "vpn" "cloud" "worker1" "worker2"
+do
+  if ping -c 1 "$hosts.miche1.de" >> /dev/null
   then
-    # send telegram notifaction
-    echo ${hosts[$i]}' down'
+    echo "$hosts up"
   else
-    echo ${hosts[$i]}' up'
+    echo "$hosts down"
+    curl -X  POST "https://api.telegram.org/bot468538263:AAE6SsDgZ3SlEVYH3AkC09_6lxmonHH2cIY/sendMessage?chat_id=275076593&text=$hosts.miche1.de down!"
   fi
-
 done
+
+
+
