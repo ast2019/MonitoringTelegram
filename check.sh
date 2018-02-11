@@ -2,7 +2,7 @@
 declare -a hosts
 #hosts=("vpn" "cloud" "worker1" "worker2")
 
-for hosts in "vpn" "cloud" "worker1" "worker2"
+for hosts in "vpn" "cloud" "worker1" "worker2" "www"
 do
   if ping -c 1 "$hosts.miche1.de" >> /dev/null
   then
