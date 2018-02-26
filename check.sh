@@ -1,8 +1,7 @@
 #!/bin/bash
 declare -a hosts
-#hosts=("vpn" "cloud" "worker1" "worker2")
 
-for hosts in "vpn" "cloud" "worker1" "worker2" "www"
+for hosts in "vpn" "cloud" "worker1" "worker2" "www" "www1" "www2"
 do
   if ping -c 1 "$hosts.miche1.de" >> /dev/null
   then
