@@ -8,9 +8,7 @@ do
     echo "$hosts up"
   else
     echo "$hosts down"
+    # send notifaction to a specified telegram chat 
     curl -X  POST "https://api.telegram.org/bot468538263:AAE6SsDgZ3SlEVYH3AkC09_6lxmonHH2cIY/sendMessage?chat_id=275076593&text=$hosts.miche1.de down!"
   fi
 done
-
-
-
